@@ -20,7 +20,7 @@ router.get('/quizes/:quizId(\\d+)/answer',quizController.answer);
 router.get('/quizes/author',quizController.author);
 
 
-
+router.param('commentId',commentController.load); // autoload :commentId
 
 router.get('/quizes/new',sessionController.loginRequired,quizController.new);
 router.post('/quizes/create',sessionController.loginRequired,quizController.create);
@@ -38,6 +38,8 @@ router.get('/login',sessionController.new); // formulario de login
 router.post('/login',sessionController.create); // crear sesion
 router.get('/logout',sessionController.destroy);
 
+
+router.get('/quizes/:quizId(\\d+)/comments/:commentId(\\d+)/publish',sessionController.loginRequired,commentController.publish);
 
 
 
