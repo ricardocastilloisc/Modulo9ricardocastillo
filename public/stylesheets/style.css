@@ -32,3 +32,4 @@ nav span {
 
 div#busqueda					{ border: 5px ridge #999; margin: 0px 0px 10px 0px; text-align:center;}
 #ErrorMsgs						{ color: red; font-size: small; }
+.right{float: right}
