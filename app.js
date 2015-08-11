@@ -32,6 +32,21 @@ app.use(partials());
 app.use(methodOverride('_method'));
 
 
+// autologout
+app.use(function(req, res, next) {
+    if (req.session.user) {
+        if (Date.now() - req.session.user.hora > 120000) {
+            delete req.session.user;
+            res.redirect('/login');
+        } else {
+            req.session.user.hora = Date.now();
+        }
+    }
+    next();
+});
+
+
+
 
 // Helpers dinamicos:
 app.use(function(req,res,next){
