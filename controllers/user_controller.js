@@ -1,7 +1,7 @@
 
 //usario y password
 var users = { admin:{id:1,username:"admin",password:"1234"},
-             nayn:{id:2,username:"ricardo",password:"1234"}
+             ricardo:{id:2,username:"ricardo",password:"1234"}
             };
 
 //Comprueba si el usuario esta registrado en users
